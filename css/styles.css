@@ -56,9 +56,16 @@ h1 {
 #bar1 {
   width: 0%;
   height: 30px;
-  background-color: #00b42d;
+  background: linear-gradient(90deg, oklch(59.06% 0.2508 345.23) 0.000% 16.667%, oklch(62.81% 0.2533 354.84) 16.667% 33.333%, oklch(66.07% 0.2294 7.53) 33.333% 50.000%, oklch(69.79% 0.1928 27.58) 50.000% 66.667%, oklch(74.48% 0.1720 52.02) 66.667% 83.333%, oklch(79.13% 0.1697 69.78) 83.333% 100.000%);
   transition: width 0.1s linear;
 }
+
+/* @keyframes .progress-bar {
+  from {
+
+  }
+} */
+
 
 body {
   margin: 0;
