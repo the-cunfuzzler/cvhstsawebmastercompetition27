@@ -50,7 +50,7 @@ h1 {
 }
 
 #bar1 {
-  width: 10%;
+  width: 0%;
   height: 30px;
   background-color: #00b42d;
   transition: width 0.1s linear;
