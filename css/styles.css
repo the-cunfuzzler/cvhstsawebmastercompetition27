@@ -118,6 +118,26 @@ img {
 }
 
 h2 {
-  padding: auto;
-  margin: 1%;
+  padding: 1%;
+  margin: auto;
+  background: radial-gradient(ellipse, chartreuse, cyan, blue, purple, violet, red, orangered, orange, yellow, chartreuse);
+  border-radius: 20px;
+  color:white;
+}
+h3 {
+  padding:0.9%;
+  margin: 0.1%;
+  border-radius: 5px;
+  background: radial-gradient(ellipse, chartreuse, cyan, blue, purple, violet, red, orangered, orange, yellow, chartreuse);
+   /* Fallback color for very old browsers */
+  color: #3b82f6; 
+  
+  /* 1. Define the gradient */
+  
+  /* 2. Clip the background to the text */
+  -webkit-background-clip: text;
+  background-clip: text;
+  
+  /* 3. Make the text fill transparent to reveal the background */
+  color: transparent;
 }
