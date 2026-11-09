@@ -15,3 +15,4 @@ Gamification & Progress Tracking: An interactive, gamified user interface (e.g.,
 
 <!--Gamifcation-->
 You get items that form an AI related object after completeing each section
+Images "fill up" the further you read into a page, then at the end, you take a quiz to earn that image. Like a badge or similar.
