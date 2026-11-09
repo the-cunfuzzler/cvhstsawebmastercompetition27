@@ -1,15 +1,15 @@
 const progressBar = document.getElementsByClassName("progress-bar")
 const bar1 = document.getElementById("bar1")
+var percentage = 0;
 
-setInterval(() => {
-    // Get current vertical scroll position in pixels
-    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+window.addEventListener('scroll', () => {
 
-    // Get total scrollable height
-    var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const currentScroll = window.scrollY;
+  const newPercentage = totalHeight > 0 
+    ? (currentScroll / totalHeight) * 100 
+    : 0;
+  percentage = Math.max(newPercentage, percentage);
 
-    // Calculate scroll depth as a percentage (0 to 100)
-    var scrollPercent = (scrollHeight > 0) ? (scrollTop / scrollHeight) * 100 : 0;
-
-    bar1.style.width = (scrollTop / scrollHeight) * 100;
-}, 100);
+  bar1.style.width = percentage + '%';
+});
