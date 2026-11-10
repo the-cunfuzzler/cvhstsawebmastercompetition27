@@ -1,6 +1,6 @@
 const progressBar = document.getElementsByClassName("progress-bar")
 const bar1 = document.getElementById("bar1")
-var percentage = 0;
+var percentage = localStorage.getItem(document.title) + '%' || 0;
 
 window.addEventListener('scroll', () => {
 
@@ -10,6 +10,7 @@ window.addEventListener('scroll', () => {
     ? (currentScroll / totalHeight) * 100 
     : 0;
   percentage = Math.max(newPercentage, percentage);
+  localStorage.setItem(document.title, percentage)
 
   bar1.style.width = percentage + '%';
 });
