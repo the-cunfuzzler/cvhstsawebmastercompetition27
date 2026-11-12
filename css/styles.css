@@ -1,37 +1,50 @@
-*{
+* {
   max-width: 100%;
 }
-.topOfPage{
-    display: flex;
-    flex-wrap:wrap;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    position: sticky;
-    top:0 ;
+
+.topOfPage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.topOfPage a{
-    padding:20px;
+.topOfPage a {
+  padding: 20px;
 }
 
-.topOfPage img{
-    max-height: 50px;
-    height: auto;
-    width: auto;
-    outline: 2px solid rgb(0, 26, 255);
-    border-radius: 10px;
-    border-bottom: 5px solid #0056ff;
-    border-right: 5px solid #0056ff;  
+.topOfPage img {
+  max-height: 50px;
+  height: auto;
+  width: auto;
+  outline: 2px solid rgb(0, 26, 255);
+  border-radius: 10px;
+  border-bottom: 5px solid #0056ff;
+  border-right: 5px solid #0056ff;  
 }
 
 .topOfPage img:hover {
-    transform: scale(1.2);
-    transition: transform 0.3s ease;
+  transform: scale(1.2) rotate(-5deg);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.topOfPage img:active {
+  transform: scale(0.95) rotate(0deg);
+  border-bottom: 2px solid #0056ff;
+  border-right: 2px solid #0056ff;
+  transition: transform 0.1s ease;
 }
 
 h1 {
-  background: radial-gradient(circle, #0076fd, #5698e2);
+  position: relative;
+  overflow: hidden;
+  background: 
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 50%),
+    radial-gradient(circle, #0076fd, #5698e2);
   color: white;
   border-radius: 10px;
   padding: 10px;
@@ -39,9 +52,25 @@ h1 {
   padding-right: 105px; 
   border-bottom: 5px solid #0056ff;
   border-right: 5px solid #0056ff;
-
-
 }
+
+h1::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+}
+
+
 
 .progress-bar {
   width: 100%;
@@ -56,16 +85,96 @@ h1 {
 #bar1 {
   width: 0%;
   height: 30px;
-  background-color: #00b42d;
+  background: linear-gradient(90deg in oklch, 
+    oklch(35.04% 0.0276 239.06) 0.0px, 
+    oklch(37.61% 0.0318 232.63) 6.0px, 
+    oklch(41.19% 0.0381 223.61) 12.2px, 
+    oklch(45.41% 0.0453 213.00) 18.2px, 
+    oklch(49.90% 0.0521 201.84) 24.2px, 
+    oklch(54.27% 0.0575 191.11) 30.4px, 
+    oklch(58.31% 0.0603 181.67) 36.4px, 
+    oklch(62.59% 0.0605 172.99) 42.4px, 
+    oklch(66.98% 0.0593 164.57) 48.4px, 
+    oklch(71.19% 0.0577 155.96) 54.6px, 
+    oklch(74.94% 0.0569 146.77) 60.6px, 
+    oklch(77.95% 0.0579 136.56) 66.6px, 
+    oklch(80.28% 0.0605 124.51) 72.8px, 
+    oklch(82.15% 0.0640 110.85) 78.8px, 
+    oklch(83.51% 0.0685 96.72) 84.8px, 
+    oklch(84.28% 0.0739 83.25) 91.0px, 
+    oklch(84.43% 0.0804 71.60) 97.0px, 
+    oklch(83.88% 0.0884 62.72) 103.0px, 
+    oklch(82.56% 0.0993 56.05) 109.0px, 
+    oklch(80.58% 0.1119 50.98) 115.2px, 
+    oklch(78.08% 0.1244 47.01) 121.2px, 
+    oklch(75.19% 0.1350 43.65) 127.2px, 
+    oklch(72.05% 0.1419 40.39) 133.4px, 
+    oklch(68.40% 0.1455 37.28) 139.4px, 
+    oklch(64.13% 0.1470 34.67) 145.4px, 
+    oklch(59.55% 0.1464 32.59) 151.6px, 
+    oklch(54.97% 0.1433 31.06) 157.6px, 
+    oklch(50.72% 0.1376 30.09) 163.6px, 
+    oklch(47.00% 0.1285 29.79) 169.6px, 
+    oklch(43.38% 0.1136 30.51) 175.8px, 
+    oklch(39.92% 0.0952 31.92) 181.8px, 
+    oklch(36.80% 0.0763 33.62) 187.8px, 
+    oklch(34.19% 0.0596 35.17) 194.0px, 
+    oklch(32.28% 0.0482 36.17) 200px,
+
+    oklch(34.19% 0.0596 35.17) 206.0px,
+    oklch(36.80% 0.0763 33.62) 212.2px,
+    oklch(39.92% 0.0952 31.92) 218.2px,
+    oklch(43.38% 0.1136 30.51) 224.2px,
+    oklch(47.00% 0.1285 29.79) 230.4px,
+    oklch(50.72% 0.1376 30.09) 236.4px,
+    oklch(54.97% 0.1433 31.06) 242.4px,
+    oklch(59.55% 0.1464 32.59) 248.4px,
+    oklch(64.13% 0.1470 34.67) 254.6px,
+    oklch(68.40% 0.1455 37.28) 260.6px,
+    oklch(72.05% 0.1419 40.39) 266.6px,
+    oklch(75.19% 0.1350 43.65) 272.8px,
+    oklch(78.08% 0.1244 47.01) 278.8px,
+    oklch(80.58% 0.1119 50.98) 284.8px,
+    oklch(82.56% 0.0993 56.05) 291.0px,
+    oklch(83.88% 0.0884 62.72) 297.0px,
+    oklch(84.43% 0.0804 71.60) 303.0px,
+    oklch(84.28% 0.0739 83.25) 309.0px,
+    oklch(83.51% 0.0685 96.72) 315.2px,
+    oklch(82.15% 0.0640 110.85) 321.2px,
+    oklch(80.28% 0.0605 124.51) 327.2px,
+    oklch(77.95% 0.0579 136.56) 333.4px,
+    oklch(74.94% 0.0569 146.77) 339.4px,
+    oklch(71.19% 0.0577 155.96) 345.4px,
+    oklch(66.98% 0.0593 164.57) 351.6px,
+    oklch(62.59% 0.0605 172.99) 357.6px,
+    oklch(58.31% 0.0603 181.67) 363.6px,
+    oklch(54.27% 0.0575 191.11) 369.6px,
+    oklch(49.90% 0.0521 201.84) 375.8px,
+    oklch(45.41% 0.0453 213.00) 381.8px,
+    oklch(41.19% 0.0381 223.61) 387.8px,
+    oklch(37.61% 0.0318 232.63) 394.0px,
+    oklch(35.04% 0.0276 239.06) 400px
+  );
+  background-size: 400px 100%;
+  background-repeat: repeat-x;
   transition: width 0.1s linear;
+  animation: bar-anim 3s linear infinite;
+  filter: drop-shadow(0 0 8px oklch(62.59% 0.0605 172.99));
+}
+
+@keyframes bar-anim {
+  from {
+    background-position: 0px 0;
+  }
+  to {
+    background-position: -400px 0;
+  }
 }
 
 body {
   margin: 0;
   min-height: 100vh;
-
   font-family: "Helvetica Neue", Arial, sans-serif;
-
   color:#1a1a1a;
   background-color: #fcfcfc;
 }
@@ -73,13 +182,20 @@ body {
 nav ul {
   list-style-type: none;
   margin: 0;
-  padding: 0;
-
+  padding: 10px;
   display: flex;
   justify-content: left;
   gap: 20px;
+  background: linear-gradient(90deg, #0056ff, #00c6ff, #0056ff);
+  background-size: 200% 100%;
+  /* border-radius: 12px; */
+  box-shadow: 0 4px 15px rgba(0, 86, 255, 0.2);
+  animation: nav-pan 6s linear infinite;
+}
 
-  background-color: #0076ff;
+@keyframes nav-pan {
+  0% { background-position: 0% 0; }
+  100% { background-position: 200% 0; }
 }
 
 nav a {
@@ -87,24 +203,20 @@ nav a {
   color: white;
   font-size: 14px;
   font-weight: bold;
-
   display: inline-block;
-  padding: 20px;
-
+  padding: 15px 25px;
   background: linear-gradient(
     to bottom,
     #4da3ff,
     #2c87f0
   );
-
   border-top: 2px solid #7ec0ff;
   border-left: 2px solid #7ec0ff;
-  border-right: 2px solid #0056ff;
-  border-bottom: 5px solid #0056ff;
-
+  border-right: 3px solid #0045cc;
+  border-bottom: 5px solid #0045cc;
+  border-radius: 10px;
   box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
-
-  transition: all 0.15s ease;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 nav a:hover {
@@ -113,8 +225,9 @@ nav a:hover {
     #66b2ff,
     #3a95ff
   );
-
-  transform: translateY(-2px);
+  transform: translateY(-4px) scale(1.05) rotate(2deg);
+  border-bottom: 7px solid #0045cc;
+  box-shadow: 0 0 5px #00f3ff, 0 0 10px #00f3ff, 0 0 20px #00f3ff;
 }
 
 nav a:active {
@@ -123,10 +236,9 @@ nav a:active {
     #1f78e5,
     #0056ff
   );
-  transform: translateY(3px);
-  border-bottom: 2px solid #0056ff;
+  transform: translateY(3px) scale(0.95);
+  border-bottom: 2px solid #0045cc;
   box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.25);
-  transform: translateY(3px);
 }
 
 img {
