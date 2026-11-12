@@ -68,13 +68,9 @@ h1::after {
     rgba(255, 255, 255, 0) 100%
   );
   transform: skewX(-20deg);
-  animation: laser-sweep 4s ease-in-out infinite;
 }
 
-@keyframes laser-sweep {
-  0% { left: -100%; }
-  30%, 100% { left: 150%; }
-}
+
 
 .progress-bar {
   width: 100%;
@@ -192,7 +188,7 @@ nav ul {
   gap: 20px;
   background: linear-gradient(90deg, #0056ff, #00c6ff, #0056ff);
   background-size: 200% 100%;
-  border-radius: 12px;
+  /* border-radius: 12px; */
   box-shadow: 0 4px 15px rgba(0, 86, 255, 0.2);
   animation: nav-pan 6s linear infinite;
 }
