@@ -1,0 +1,33 @@
+name: Backup Base Branch on Merge
+
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  backup:
+    if: github.event.pull_request.merged == true
+    runs-on: windows-latest
+    
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout base branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.ref }}
+          fetch-depth: 0
+
+      - name: Create backup folder
+        shell: cmd
+        run: |
+          # Generate a unique backup name using the current timestamp
+          for %I in (.) do set "DIR_NAME=%~nxI"
+          
+          # # Create and push the backup branch from the pre-merge state
+          # git checkout -b "$BACKUP_NAME"
+          # git push origin "$BACKUP_NAME"
+          cd ..
+          copy "&DIR_NAME" "Backup_GD_Folder"
